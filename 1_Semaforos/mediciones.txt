@@ -1,0 +1,4 @@
+Valor final: 2000000
+Tiempo de ejecución: 0.143390 segundos
+Tiempo de CPU: 0.135835 segundos
+Uso de memoria residente: 0.03%

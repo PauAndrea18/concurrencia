@@ -1,0 +1,4 @@
+Tiempo de ejecución: 0.000073 segundos
+Tiempo de CPU (usuario): 0.001380 segundos
+Tiempo de CPU (sistema): 0.000000 segundos
+Uso de memoria residente: 0.02%
