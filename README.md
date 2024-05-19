@@ -17,14 +17,6 @@ Para cada uno de estos programas, se medirán los siguientes parámetros:
 2. **Procesamiento (tiempo de CPU)** (medido en segundos)
 3. **Uso de memoria** (medido en %)
 
-Los resultados se mostrarán en tablas como se muestra a continuación:
-
-![Tablas de Datos](Imagenes/TablasDatos.PNG)
-
-Y se graficarán para una mejor comparación:
-
-![Gráfica de Comparación](Imagenes/GraficaComparacion.PNG)
-
 ### Ejecución de los Programas
 
 1. Compila los programas:
@@ -43,10 +35,24 @@ Y se graficarán para una mejor comparación:
     ./RR
     ```
 
-3. Registra los datos obtenidos y compáralos en tablas y gráficas.
+3. Observa los datos tomados usando el siguiente comando en cada uno de los directorios:
+   ```sh
+    cat mediciones.txt
+    ```
+   
+5. Registra los datos obtenidos y compáralos en tablas y gráficas.
 
-## Punto 2: Implementación de una Aplicación Bancaria con Concurrencia
+Los resultados se mostrarán en tablas como se muestra a continuación:
 
+![Tablas de Datos](Imagenes/TablasDatos.PNG)
+
+Y se graficarán para una mejor comparación:
+
+![Gráfica de Comparación](Imagenes/GraficaComparacion.PNG)
+
+## Punto 2: Implementación de una aplicación con y sin concurrencia
+
+Diseñar e implementar una aplicación de consulta a una Base de Datos (en este caso se pu
 Se programará una aplicación en C utilizando SQLite para simular una operación bancaria. La base de datos contendrá una tabla que representa el saldo de una persona como se muestra a continuación:
 
 ![Base de Datos](Imagenes/BaseDatos.jpg)
