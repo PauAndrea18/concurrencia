@@ -19,11 +19,11 @@ Para cada uno de estos programas, se medirán los siguientes parámetros:
 
 Los resultados se mostrarán en tablas como se muestra a continuación:
 
-![Tabla de Datos](Imagenes/Tabla_datos.PNG)
+![Tabla de Datos](Imagenes/TablaDatos.PNG)
 
 Y se graficarán para una mejor comparación:
 
-![Gráfica de Comparación](Imagenes/Grafica_comparacion.PNG)
+![Gráfica de Comparación](Imagenes/GraficaComparacion.PNG)
 
 ### Ejecución de los Programas
 
@@ -49,7 +49,7 @@ Y se graficarán para una mejor comparación:
 
 Se programará una aplicación en C utilizando SQLite para simular una operación bancaria. La base de datos contendrá una tabla que representa el saldo de una persona como se muestra a continuación:
 
-![Base de Datos](Imagenes/Base_de_datos.jpg)
+![Base de Datos](Imagenes/BaseDatos.jpg)
 
 Para evitar accesos concurrentes que puedan causar inconsistencias, se utilizará un mecanismo de concurrencia (en este caso, un mutex).
 
@@ -63,7 +63,7 @@ Para evitar accesos concurrentes que puedan causar inconsistencias, se utilizar�
 
 El programa `sinConcurrencia.c` muestra el problema de acceder al saldo desde múltiples hilos sin control de concurrencia, lo que puede llevar a saldos negativos:
 
-![Salida del Programa sin Concurrencia](Imagenes/Salida_programa_sinConcurrencia.jpg)
+![Salida del Programa sin Concurrencia](Imagenes/SalidaPrograma_sinConcurrencia.jpg)
 
 ### Implementación del Programa con Concurrencia
 
@@ -81,7 +81,7 @@ Otras opciones, como semáforos o barreras, podrían haber sido utilizadas tambi
 
 El programa con concurrencia (`conConcurrencia.c`) evita que el saldo llegue a ser negativo, demostrando así la eficacia de la implementación de mutex en este contexto:
 
-![Salida del Programa con Concurrencia](Imagenes/Salida_programa_conConcurrencia.jpg)
+![Salida del Programa con Concurrencia](Imagenes/SalidaPrograma_conConcurrencia.jpg)
 
 ## Conclusión
 
