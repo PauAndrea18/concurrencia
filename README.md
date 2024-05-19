@@ -12,7 +12,7 @@ Este taller tiene como objetivo comprender y comparar diferentes métodos de con
 Ejecutaremos y compararemos los siguientes programas:
 
 - `semaforo.c`
-- `mutex.c`
+- `muteces.c`
 - `monitor.c`
 - `RR.c`
 
@@ -26,10 +26,10 @@ Para cada uno de estos programas, se medirán los siguientes parámetros:
 
 1. Compila los programas:
     ```sh
-    gcc semaforo.c -o semaforo -lpthread
-    gcc mutex.c -o mutex -lpthread
-    gcc monitor.c -o monitor -lpthread
-    gcc RR.c -o RR -lpthread
+    gcc -o semaforo semaforo.c -lpthread
+    gcc -o muteces muteces.c -lpthread
+    gcc -o monitor monitor.c -lpthread
+    gcc -o RR RR.c -lpthread
     ```
 
 2. Ejecuta los programas y mide los tiempos y uso de memoria:
@@ -42,18 +42,18 @@ Para cada uno de estos programas, se medirán los siguientes parámetros:
 
 3. Observa los datos tomados usando el siguiente comando en cada uno de los directorios:
    ```sh
-    cat mediciones.txt
-    ```
-   
-5. Registra los datos obtenidos y compáralos en tablas y gráficas.
+   cat mediciones.txt
+   ```
 
-Los resultados se mostrarán en tablas como se muestra a continuación:
+4. Registra los datos obtenidos y compáralos en tablas y gráficas.
 
-![Tablas de Datos](Imagenes/TablasDatos.PNG)
+   Los resultados se evidencian en las tablas a continuación:
 
-Y se graficarán para una mejor comparación:
+   ![Tablas de Datos](Imagenes/TablasDatos.PNG)
 
-![Gráfica de Comparación](Imagenes/GraficaComparacion.PNG)
+   Y la siguiente es la gráfica correspondiente para una mejor comparación:
+
+   ![Gráfica de Comparación](Imagenes/GraficaComparacion.PNG)
 
 ## Punto 2: Implementación de una aplicación con y sin concurrencia
 
@@ -72,6 +72,22 @@ Para evitar accesos concurrentes que puedan causar inconsistencias, se utilizar�
 
 ### Ejecución del Programa sin Concurrencia
 
+1. Compila el programa:
+    ```sh
+    gcc -o sinConcurrencia sinConcurrencia.c -lpthread -lsqlite3
+    ```
+
+2. Ejecuta el programa:
+    ```sh
+    ./sinConcurrencia
+    ```
+
+3. Observa el saldo que quedo registrado en la base de datos luego de la ejecución del programa:
+   ```sh
+   sqlite3 banco.db
+   SELECT * FROM saldo;
+   ```
+
 El programa `sinConcurrencia.c` muestra el problema de acceder al saldo desde múltiples hilos sin control de concurrencia, lo que puede llevar a saldos negativos:
 
 ![Salida del Programa sin Concurrencia](Imagenes/SalidaPrograma_sinConcurrencia.jpg)
@@ -89,6 +105,22 @@ En este escenario, estamos accediendo a una base de datos compartida desde múlt
 Otras opciones, como semáforos o barreras, podrían haber sido utilizadas también para lograr la misma funcionalidad. Sin embargo, en este caso, un mutex parece ser la opción más simple y apropiada dada la naturaleza de la operación de acceso a la base de datos.
 
 ### Ejecución del Programa con Concurrencia
+
+1. Compila el programa:
+    ```sh
+    gcc -o conConcurrencia conConcurrencia.c -lpthread -lsqlite3
+    ```
+
+2. Ejecuta el programa:
+    ```sh
+    ./conConcurrencia
+    ```
+
+3. Observa el saldo que quedo registrado en la base de datos luego de la ejecución del programa:
+   ```sh
+   sqlite3 banco.db
+   SELECT * FROM saldo;
+   ```
 
 El programa con concurrencia (`conConcurrencia.c`) evita que el saldo llegue a ser negativo, demostrando así la eficacia de la implementación de mutex en este contexto:
 
