@@ -92,18 +92,6 @@ El programa `sinConcurrencia.c` muestra el problema de acceder al saldo desde m�
 
 ![Salida del Programa sin Concurrencia](Imagenes/SalidaPrograma_sinConcurrencia.jpg)
 
-### Implementación del Programa con Concurrencia
-
-Se implementará un programa utilizando mutex para garantizar la exclusión mutua y así evitar inconsistencias en el saldo de la cuenta.
-
-### Explicación del Mutex
-
-Los mutex (abreviatura de mutual exclusion) son objetos de sincronización que permiten a los hilos coordinar el acceso a recursos compartidos de manera segura, evitando condiciones de carrera y garantizando la consistencia de los datos. Cuando un hilo adquiere un mutex, bloquea el acceso a otros hilos hasta que lo libera, asegurando que solo un hilo pueda ejecutar una sección crítica del código a la vez.
-
-En este escenario, estamos accediendo a una base de datos compartida desde múltiples hilos, y queremos asegurarnos de que solo un hilo pueda realizar una transacción a la vez para evitar problemas de consistencia en los datos. El uso de un mutex nos permite lograr esto de manera bastante directa y comprensible.
-
-Otras opciones, como semáforos o barreras, podrían haber sido utilizadas también para lograr la misma funcionalidad. Sin embargo, en este caso, un mutex parece ser la opción más simple y apropiada dada la naturaleza de la operación de acceso a la base de datos.
-
 ### Ejecución del Programa con Concurrencia
 
 1. Compila el programa:
@@ -125,6 +113,14 @@ Otras opciones, como semáforos o barreras, podrían haber sido utilizadas tambi
 El programa con concurrencia (`conConcurrencia.c`) evita que el saldo llegue a ser negativo, demostrando así la eficacia de la implementación de mutex en este contexto:
 
 ![Salida del Programa con Concurrencia](Imagenes/SalidaPrograma_conConcurrencia.jpg)
+
+### Explicación del Mutex
+
+Los mutex (abreviatura de mutual exclusion) son objetos de sincronización que permiten a los hilos coordinar el acceso a recursos compartidos de manera segura, evitando condiciones de carrera y garantizando la consistencia de los datos. Cuando un hilo adquiere un mutex, bloquea el acceso a otros hilos hasta que lo libera, asegurando que solo un hilo pueda ejecutar una sección crítica del código a la vez.
+
+En este escenario, estamos accediendo a una base de datos compartida desde múltiples hilos, y queremos asegurarnos de que solo un hilo pueda realizar una transacción a la vez para evitar problemas de consistencia en los datos. El uso de un mutex nos permite lograr esto de manera bastante directa y comprensible.
+
+Otras opciones, como semáforos o barreras, podrían haber sido utilizadas también para lograr la misma funcionalidad. Sin embargo, en este caso, un mutex parece ser la opción más simple y apropiada dada la naturaleza de la operación de acceso a la base de datos.
 
 ## Conclusión
 
