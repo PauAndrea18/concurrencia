@@ -19,7 +19,7 @@ Para cada uno de estos programas, se medirán los siguientes parámetros:
 
 Los resultados se mostrarán en tablas como se muestra a continuación:
 
-![Tabla de Datos](Imagenes/TablaDatos.PNG)
+![Tablas de Datos](Imagenes/TablasDatos.PNG)
 
 Y se graficarán para una mejor comparación:
 
