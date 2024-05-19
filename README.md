@@ -114,7 +114,7 @@ El programa con concurrencia (`conConcurrencia.c`) evita que el saldo llegue a s
 
 ![Salida del Programa con Concurrencia](Imagenes/SalidaPrograma_conConcurrencia.jpg)
 
-### Explicación del Mutex
+### Explicación elección del Mutex
 
 Los mutex (abreviatura de mutual exclusion) son objetos de sincronización que permiten a los hilos coordinar el acceso a recursos compartidos de manera segura, evitando condiciones de carrera y garantizando la consistencia de los datos. Cuando un hilo adquiere un mutex, bloquea el acceso a otros hilos hasta que lo libera, asegurando que solo un hilo pueda ejecutar una sección crítica del código a la vez.
 
