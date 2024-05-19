@@ -2,6 +2,11 @@
 
 Este taller tiene como objetivo comprender y comparar diferentes métodos de concurrencia en la programación, así como implementar una aplicación que maneje concurrencia utilizando una base de datos y observar la diferencia con una aplicación sin concurrencia. 
 
+### Integrantes
+- David Arias Rueda
+- Juan David Carvajal Lozano
+- Paula Andrea Gómez Aldana
+
 ## Punto 1: Comparación de Métodos de Concurrencia
 
 Ejecutaremos y compararemos los siguientes programas:
